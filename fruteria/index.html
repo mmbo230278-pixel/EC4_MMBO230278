@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería · Manzanas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="tema-fruteria">
+    <header class="encabezado">
+        <img src="img/logo.svg" alt="Logo">
+        <h1>Frutería · Manzanas</h1>
+    </header>
+    <main class="contenedor"><div class="tarjeta">
+        <h2>¿Cuánto pagará por sus manzanas?</h2>
+        <table class="table table-bordered text-center w-75 mx-auto">
+            <thead class="table-success"><tr><th>Kilos comprados</th><th>% de descuento</th></tr></thead>
+            <tbody><tr><td>0 – 2</td><td>0%</td></tr><tr><td>2.01 – 5</td><td>10%</td></tr>
+                   <tr><td>5.01 – 10</td><td>15%</td></tr><tr><td>10.01 en adelante</td><td>20%</td></tr></tbody>
+        </table>
+        <form action="php/procesar.php" method="post" novalidate>
+            <table class="table table-bordered table-striped align-middle">
+                <tbody>
+                    <tr><th scope="row" style="width:40%"><label for="kilos">Kilos de manzana</label></th>
+                        <td><input type="text" class="form-control" id="kilos" name="kilos" data-tipo="decimal" data-min="0.01" data-max="1000" placeholder="Ej. 6.5">
+                            <div class="invalid-feedback"></div></td></tr>
+                    <tr><th scope="row"><label for="precio">Precio por kilo ($)</label></th>
+                        <td><input type="text" class="form-control" id="precio" name="precio" data-tipo="decimal" data-min="1" data-max="1000" value="35">
+                            <div class="invalid-feedback"></div></td></tr>
+                </tbody>
+            </table>
+            <div class="text-center"><button type="submit" class="btn btn-principal btn-lg" onclick="return validar()">Calcular total</button></div>
+        </form>
+        <a class="volver" href="../index.html">&larr; Volver al men&uacute;</a>
+    </div></main>
+    <script src="../js/validaciones.js"></script>
+</body>
+</html>

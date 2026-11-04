@@ -1,0 +1,6 @@
+SUBIR A danieltellez.net: la carpeta EC4_MMBO230278 completa (necesita PHP 7.4 o superior).
+Abre index.html: desde ahí se entra a los 4 aplicativos.
+Local (opcional): dentro de la carpeta ejecuta  php -S localhost:8000
+NOTA: el enunciado dice 104 g por muñeca en el texto y 75 g en la lista de variables.
+Se usó 104 g. Si tu profesor pide 75, cambia $peso_muneca en jugueteria/php/procesar.php
+y el texto "104 g" en jugueteria/index.html.

@@ -1,0 +1,48 @@
+/* estilos.css: apariencia de todos los aplicativos (separada del HTML) */
+:root { --blanco:#fff; --obscuro:#212121; --gris:#959595; --primario:#0097a7; --acento:#ffc107; }
+html { font-size: 62.5%; box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+body { font-size: 1.6rem; font-family: 'Ubuntu', sans-serif; margin: 0;
+       background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%); color: var(--obscuro); }
+.contenedor { max-width: 90rem; width: 95%; margin: 0 auto; }
+.encabezado { background: var(--primario); color: var(--blanco); text-align: center; padding: 2rem 1rem; }
+.encabezado h1 { font-size: 3.2rem; margin: 0; }
+.encabezado img { height: 6rem; margin-bottom: 1rem; }
+.tarjeta { background: var(--blanco); border-radius: 1.5rem; padding: 3rem; margin: 2rem auto;
+           box-shadow: 0 5px 15px rgba(0,0,0,.2); }
+.tarjeta h2 { font-size: 2.4rem; text-align: center; }
+.volver { display: inline-block; margin: 1rem 0 3rem; font-size: 1.8rem; }
+.btn-principal { background: var(--primario); color: var(--blanco); font-weight: 700; border: 0; }
+.btn-principal:hover { background: var(--obscuro); color: var(--blanco); }
+.ilustracion { text-align: center; }
+.ilustracion img { height: 12rem; margin: 0 1.5rem; }
+/* Menú principal */
+.menu { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .menu { grid-template-columns: repeat(2, 1fr); } }
+.menu a { display: block; text-align: center; padding: 3rem 2rem; border-radius: 1.5rem; color: var(--blanco);
+          text-decoration: none; font-size: 2.2rem; font-weight: 700; }
+.menu a:hover { filter: brightness(1.15); }
+.menu img { height: 8rem; display: block; margin: 0 auto 1rem; }
+
+/* ----- Temas ----- */
+body.tema-sixflags  { --primario:#d71920; --acento:#ffd100; --azul:#0b2a5b; }
+body.tema-jugueteria{ --primario:#e91e8c; --acento:#ffc107; }
+body.tema-obrero    { --primario:#f57c00; --acento:#263238; }
+body.tema-fruteria  { --primario:#2e7d32; --acento:#d32f2f; }
+
+/* ----- Ticket / recibo ----- */
+.ticket { max-width: 42rem; margin: 2rem auto; background: var(--blanco); border: 3px dashed var(--primario); border-radius: 1rem; overflow: hidden; }
+.ticket-cab { background: var(--primario); color: var(--blanco); text-align: center; padding: 1.5rem; }
+.ticket-cab img { height: 5rem; }
+.ticket-cab h3 { margin: .5rem 0 0; font-size: 2.2rem; }
+.ticket-cuerpo { padding: 2rem; }
+.ticket-total { background: var(--acento); color: var(--obscuro); font-size: 2.4rem; font-weight: 700; text-align: center; padding: 1.2rem; }
+.ticket-pie { text-align: center; font-size: 1.3rem; padding: 1rem; color: var(--gris); }
+
+/* ----- Impresión (Ctrl + P) ----- */
+@media print {
+    .no-imprimir { display: none !important; }
+    body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tarjeta { box-shadow: none; margin: 0; padding: 0; }
+    .ticket, .ticket-cab, .ticket-total { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
